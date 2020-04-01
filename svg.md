@@ -1,3 +1,4 @@
+[index](index.md)
 Dit is een pagina met een svg
 
 ```svg
@@ -52,3 +53,4 @@ Dit is een pagina met een svg
 ```
 
 ![observable svg](observable.svg)
+[index](index.md)
