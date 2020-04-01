@@ -51,4 +51,4 @@ Dit is een pagina met een svg
 </svg>
 ```
 
-![observable svg](https://tikal86.github.io/observable.svg)
+![observable svg](observable.svg)
