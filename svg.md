@@ -1,4 +1,4 @@
-Dit is een [agina met een svg
+Dit is een pagina met een svg
 
 ```svg
 <svg viewBox="0 0 660 340" xmlns="http://www.w3.org/2000/svg"><style>
