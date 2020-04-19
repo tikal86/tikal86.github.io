@@ -2,7 +2,7 @@
 layout: post
 title:  "playing around with SVG"
 date:   2020-04-19 11:40:59
-categories: jekyll update
+categories: svg
 ---
 
 ## This is a page with svgs
@@ -62,7 +62,7 @@ To learn how to best show svgs on my blog pages I am playing around with the opt
 ```
 
 #### One rendered  as preformatted text with highlightjs
-{% highlight svg %}
+{% highlight xml %}
 <svg viewBox="0 0 660 340" xmlns="http://www.w3.org/2000/svg"><style>
     /* Note that the color of the text is set with the    *
      * fill property, the color property is for HTML only */
@@ -114,4 +114,4 @@ To learn how to best show svgs on my blog pages I am playing around with the opt
 {% endhighlight %}
 
 #### And one included
-![observable svg](observable.svg)
+![observable svg](/images/observable.svg)
