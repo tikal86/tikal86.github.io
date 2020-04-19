@@ -2,9 +2,9 @@
 title: More than a feeling
 email: tikaltikal@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This is the homepage of Andre Hogenkamp |
-  Senior Software Engineer @ VXCompany |
-  I am a fullstack programmer
+  This is the homepage of Andre Hogenkamp
+  Senior Software Engineer @ VXCompany
+  Fullstack programmer
 baseurl: "/" # the subpath of your site, e.g. /blog/
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: tikal86
