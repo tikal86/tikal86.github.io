@@ -4,12 +4,12 @@ title:  "Reactive programming introduction"
 date:   2020-04-19 11:40:59
 categories: reactive programming
 ---
-<html>
-<body>
 
 # Reactive programming
 
+
 This is a blog series about reactive programming. A solution to programming in an environment with asynchronous data streams.
+
 
 ## What is reactive programming?
 
@@ -29,7 +29,9 @@ So it is not functional programming, but uses some ideas from functional program
 
 ### What are these patterns?
 
+
 #### The observer pattern
+
 
 The observer pattern is a software design pattern in which an object, called the observable, notifies its observers automatically of any change in the state of the data the observable is handling. (<a href="https://en.wikipedia.org/wiki/Observer_pattern">wikipedia</a>) 
 
@@ -37,11 +39,13 @@ The observer pattern is a software design pattern in which an object, called the
 
 #### The iterator pattern
 
+
 The iterator pattern is a design pattern in which an iterator is used to traverse a container and access the container's elements. The iterator pattern decouples algorithms from containers <a href="https://en.wikipedia.org/wiki/Iterator_pattern">wikipedia</a>
 
  
 
 #### Functional programming
+
 
 Functional programming is a style of building the structure and elements of computer programs, that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data (<a href="https://en.wikipedia.org/wiki/Functional_programming">wikipedia</a>) 
 
@@ -78,11 +82,10 @@ An observable should be subscribed to an observable to recieve data. When a subs
 
 Creating an observable with and without backpressure in RxJava can be done with factory methods:
 
-<pre language="java">
+```java
     Observable.just("Hello observable without backpressure");
     Flowable.just("Hello flowable");
-</pre>
- 
+```
 
 ### What is an observer?
 
@@ -103,9 +106,10 @@ An observer listens to an observable. It subscribes to the observable and gets a
 
 
 An observer can be as simple as a lambda expression or a method reference.
-<pre language="java">
+
+```java
     observable.subscribe(System.out::println);
-</pre>
+```
  
  
 
@@ -131,18 +135,18 @@ Operations are the functions that do transformations on the data that is sent fr
 
 An operation can also be a lambda expression or a method reference e.g. like a filter.
 
-<pre language="java">
+```java
     observable
     .filter(text -> text.startsWith("Hello"))
     ...
-</pre>
+```
 
 A complete example would look like
-<pre language="java">
+~~~java
     Observable.just("Hello observable without backpressure")
     .filter(text -> text.startsWith("Hello"))
     .subscribe(System.out::println);
-</pre>
+~~~
 
 
 ### Why would reactive programming be used ?
@@ -173,15 +177,11 @@ The next installment will talk about what types of observables and observers the
 
 ### References
 
-<ol>
-    <li><a href="https://en.wikipedia.org/wiki/Reactive_programming">Reactive_programming</a></li>
-    <li><a href="https://www.reactivemanifesto.org/">reactivemanifesto</a></li>
-    <li><a href="http://reactivex.io">reactivex.io</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Observer_pattern">Observer pattern</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Iterator_pattern">Iterator pattern</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a></li> 
-</ol>
+1. [Reactive_programming](https://en.wikipedia.org/wiki/Reactive_programming)
+2. [reactivemanifesto](https://www.reactivemanifesto.org/)
+3. [reactivex.io](http://reactivex.io)
+4. [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
+5. [Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)
+6. [Functional programming](https://en.wikipedia.org/wiki/Functional_programming) 
 
 PS: the images are created similar to the one from <a href="https://rxmarbles.com/">rxmarbles</a> to prevent having another display language for reactive programming.
-</body>
-</html>
