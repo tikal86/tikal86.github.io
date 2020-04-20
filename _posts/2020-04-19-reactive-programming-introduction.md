@@ -5,6 +5,7 @@ date:   2020-04-19 11:40:59
 categories: reactive programming
 ---
 
+
 # Reactive programming
 
 
@@ -82,10 +83,10 @@ An observable should be subscribed to an observable to recieve data. When a subs
 
 Creating an observable with and without backpressure in RxJava can be done with factory methods:
 
-```java
+{% highlight java %}
     Observable.just("Hello observable without backpressure");
     Flowable.just("Hello flowable");
-```
+{% endhighlight %}
 
 ### What is an observer?
 
@@ -107,10 +108,9 @@ An observer listens to an observable. It subscribes to the observable and gets a
 
 An observer can be as simple as a lambda expression or a method reference.
 
-```java
-    observable.subscribe(System.out::println);
-```
- 
+{% highlight java %}
+    .subscribe(System.out::println);
+{% endhighlight %}
  
 
 There is a special case when an object can be both an observer and an observable at the same time. This is called a subject. This will be described in the next installment.
@@ -135,11 +135,11 @@ Operations are the functions that do transformations on the data that is sent fr
 
 An operation can also be a lambda expression or a method reference e.g. like a filter.
 
-```java
-    observable
+{% highlight java %}
+    ...
     .filter(text -> text.startsWith("Hello"))
     ...
-```
+{% endhighlight %}
 
 A complete example would look like
 ~~~java
@@ -177,11 +177,16 @@ The next installment will talk about what types of observables and observers the
 
 ### References
 
-1. [Reactive_programming](https://en.wikipedia.org/wiki/Reactive_programming)
-2. [reactivemanifesto](https://www.reactivemanifesto.org/)
-3. [reactivex.io](http://reactivex.io)
-4. [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
-5. [Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)
-6. [Functional programming](https://en.wikipedia.org/wiki/Functional_programming) 
+[Reactive_programming](https://en.wikipedia.org/wiki/Reactive_programming)
+
+[reactivemanifesto](https://www.reactivemanifesto.org/)
+
+[reactivex.io](http://reactivex.io)
+
+[Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
+
+[Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)
+
+[Functional programming](https://en.wikipedia.org/wiki/Functional_programming) 
 
 PS: the images are created similar to the one from <a href="https://rxmarbles.com/">rxmarbles</a> to prevent having another display language for reactive programming.
