@@ -17,7 +17,7 @@ Reactive programming is a declarative programming paradigm concerned with data s
 
 Do not confuse reactive programming with reactive systems. It is possible to use reactive programming to create reactive systems, but they are different things. Reactive systems are about how the system as a whole behaves. They are responsive, resilient, elastic and message driven (<a href="https://www.reactivemanifesto.org/">reactivemanifesto</a>). Reactive programming is about how the code behaves. Reactive programming can be used to build reactive systems, but also to build non reactive systems.
 
-The implemention that is used in this blog is ReactiveX (<a href="http://reactivex.io">reactivex.io</a>). An API for asynchronous programming
+The implementation of reactive programming that is used in this blog is ReactiveX (<a href="http://reactivex.io">reactivex.io</a>). An API for asynchronous programming
 with observable streams. It is implemented in several programming languages. The examples in this blog are in Java. 
 
 ‘ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming’
