@@ -6,9 +6,6 @@ categories: reactive programming
 ---
 
 
-# Reactive programming
-
-
 This is a blog series about reactive programming. A solution to programming in an environment with asynchronous data streams.
 
 
@@ -56,24 +53,13 @@ Functional programming is a style of building the structure and elements of comp
 
 In reactive programming observables are coupled to observers through operations. When an observable sends data, the data is operated on by the operations and then received by the observer. 
 
-### What is an observable?</h3> 
+#### What is an observable?
 
 An observable is an object that sends data to it’s observers.  
 
 
-<svg viewBox="0 0 660 120" width="440" height="80" xmlns="http://www.w3.org/2000/svg"><style>
-    /* Note that the color of the text is set with the    *
-     * fill property, the color property is for HTML only */
-    .red { font: 40px serif; fill: red; }
-    .small { font: 20px sans-serif; }
-    .large { font: 40px sans-serif; }
-    .yellowish {fill: rgb(255,203,70); }
-    .blue {fill: rgb(62,161,203);}
-    .green {fill: rgb(130,215,54);}
-    .red {fill: rgb(255,105,70)};
-    .operationbox {fill: white;stroke: black;font: 40px sans-serif;)};</style><g> <line x1="20" y1="30" x2="600" y2="30" stroke="black"></line><line x1="560" y1="15" x2="560" y2="45" stroke="black"></line><polygon points="600,20 630,30 600,40" fill="black" stroke="black"/></g><g> <circle class="yellowish" cx="100" cy="30" r="20" stroke="black" ></circle><text x="94" y="37" class="small">2</text></g><g> <circle class="blue" cx="150" cy="30" r="20" stroke="black" ></circle><text x="139" y="37" class="small">30</text></g><g> <circle class="green" cx="200" cy="30" r="20" stroke="black" ></circle><text x="189" y="37" class="small">22</text></g><g> <circle class="red" cx="250" cy="30" r="20" stroke="black" ></circle><text x="244" y="37" class="small">5</text></g>
-</svg>
-<br/>
+![observable svg](/images/observable.svg)
+
 
 Because it is possible that the observer can’t handle receiving the data as fast as the observable can send it, it is possible for the observer to signal the observable. This is called backpressure. 
 
@@ -88,22 +74,12 @@ Creating an observable with and without backpressure in RxJava can be done with 
     Flowable.just("Hello flowable");
 {% endhighlight %}
 
-### What is an observer?
+#### What is an observer?
 
 An observer listens to an observable. It subscribes to the observable and gets a subscription to it. After subscribing it recieves data from the observable. With the subscription it can unsubscribe from the observable and then no longer recieve data from the observable.  
 
-<svg viewBox="0 0 660 120" width="440" height="80" xmlns="http://www.w3.org/2000/svg"><style>
-    /* Note that the color of the text is set with the    *
-     * fill property, the color property is for HTML only */
-    .red { font: 40px serif; fill: red; }
-    .small { font: 20px sans-serif; }
-    .large { font: 40px sans-serif; }
-    .yellowish {fill: rgb(255,203,70); }
-    .blue {fill: rgb(62,161,203);}
-    .green {fill: rgb(130,215,54);}
-    .red {fill: rgb(255,105,70)};
-    .operationbox {fill: white;stroke: black;font: 40px sans-serif;)};</style><g> <line x1="20" y1="30" x2="600" y2="30" stroke="black"></line><line x1="560" y1="15" x2="560" y2="45" stroke="black"></line><polygon points="600,20 630,30 600,40" fill="black" stroke="black"/></g><g> <circle class="blue" cx="150" cy="30" r="20" stroke="black" ></circle><text x="139" y="37" class="small">30</text></g><g> <circle class="green" cx="200" cy="30" r="20" stroke="black" ></circle><text x="189" y="37" class="small">22</text></g>
-</svg>
+![observer svg](/images/observer.svg)
+
 
 
 An observer can be as simple as a lambda expression or a method reference.
@@ -115,22 +91,12 @@ An observer can be as simple as a lambda expression or a method reference.
 
 There is a special case when an object can be both an observer and an observable at the same time. This is called a subject. This will be described in the next installment.
 
-### What are operations?
+#### What are operations?
 
 Operations are the functions that do transformations on the data that is sent from an observable to an observer or on the observable itself. There are many operations and they can be grouped into categories. There are categories creating observables, transforming, filtering or combining operators and lots more. 
 
-<svg viewBox="0 0 660 130" width="440" height="130" xmlns="http://www.w3.org/2000/svg"><style>
-    /* Note that the color of the text is set with the    *
-     * fill property, the color property is for HTML only */
-    .red { font: 40px serif; fill: red; }
-    .small { font: 20px sans-serif; }
-    .large { font: 40px sans-serif; }
-    .yellowish {fill: rgb(255,203,70); }
-    .blue {fill: rgb(62,161,203);}
-    .green {fill: rgb(130,215,54);}
-    .red {fill: rgb(255,105,70)};
-    .operationbox {fill: white;stroke: black;font: 40px sans-serif;)};</style><rect class="operationbox" fill="white" stroke="black" x="20" y="10" width="580" height="100" /><text x="150" y="74"      class="large">filter (x => x > 10)</text>
-</svg>
+![operation svg](/images/operation.svg)
+
 
 
 An operation can also be a lambda expression or a method reference e.g. like a filter.
@@ -142,14 +108,15 @@ An operation can also be a lambda expression or a method reference e.g. like a f
 {% endhighlight %}
 
 A complete example would look like
-~~~java
+
+{% highlight java %}
     Observable.just("Hello observable without backpressure")
     .filter(text -> text.startsWith("Hello"))
     .subscribe(System.out::println);
-~~~
+{% endhighlight %}
 
 
-### Why would reactive programming be used ?
+## Why would reactive programming be used ?
 
 The advantages of reactive programming are that it avoids stateful programs, uses clean input/output functions over observable streams and allows the programmer to abstract away low-level threading, synchronization, and concurrency issues. 
 
@@ -159,7 +126,7 @@ Another advantage is that it creates programs with less code, making them easier
 
  
 
-### When would reactive programming be applicable ?
+## When would reactive programming be applicable ?
 
 Reactive programming is best used when concurrency and asynchronicity are needed. Reactive programming handles concurrency and asynchronicity really well and makes these complex concepts easy for the developer.  
 
@@ -169,13 +136,13 @@ Another good usage is when handling streams of data. Then the reactive programmi
 
  
 
-### Next time
+## Next time
 
 The next installment will talk about what types of observables and observers there are. 
 
 
 
-### References
+## References
 
 [Reactive_programming](https://en.wikipedia.org/wiki/Reactive_programming)
 
