@@ -118,3 +118,6 @@ To learn how to best show svgs on my blog pages I am playing around with the opt
 
 #### blur
 ![blur circle](/images/blur.svg)
+
+#### blur different size
+![blur circle](/images/blur.svg){:height="600px" width="300px"}
