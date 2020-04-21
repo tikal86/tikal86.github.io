@@ -13,3 +13,4 @@ github_username:  tikal86
 # Build settings
 markdown: kramdown
 
+permalink: /:title
