@@ -2,7 +2,7 @@
 layout: post
 title:  "Reactive programming introduction"
 date:   2020-04-19 11:40:59
-categories: [programming]
+categories: [java]
 tags: [reactive, programming, reactivex, java]
 ---
 

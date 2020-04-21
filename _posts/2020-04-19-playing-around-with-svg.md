@@ -3,6 +3,7 @@ layout: post
 title:  "playing around with SVG"
 date:   2020-04-19 11:40:59
 categories: svg
+tags: [image svg]
 ---
 
 ## This is a page with svgs
