@@ -6,10 +6,10 @@ title: Javascript in MD files
 
 Automatic
 
-        <div id="text"></div>
-        <script>
-            document.getElementById("text").innerHTML = "Text added by JavaScript code";
-        </script>
+    <div id="text"></div>
+    <script>
+        document.getElementById("text").innerHTML = "Text added by JavaScript code";
+    </script>
 
 
 With highlight js
@@ -21,10 +21,10 @@ With highlight js
 {% endhighlight %}
 
 
-With fenced code blocks
+With fenced code blocks (is the same as nothing (first one above))
 ```
-        <div id="text"></div>
-        <script>
-            document.getElementById("text").innerHTML = "Text added by JavaScript code";
-        </script>
+<div id="text"></div>
+<script>
+    document.getElementById("text").innerHTML = "Text added by JavaScript code";
+</script>
 ```
