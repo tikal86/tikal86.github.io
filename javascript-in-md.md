@@ -5,6 +5,7 @@ title: Javascript in MD files
 [Go to page with below javascript](https://tikal86.github.io/javascript.html)
 
 Automatic
+
 html
     <div id="text"></div>
     <script>
