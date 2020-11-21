@@ -6,7 +6,14 @@ title: Javascript in MD files
 
 Automatic
 
-html
+    html
+    <div id="text"></div>
+    <script>
+        document.getElementById("text").innerHTML = "Text added by JavaScript code";
+    </script>
+
+    html
+
     <div id="text"></div>
     <script>
         document.getElementById("text").innerHTML = "Text added by JavaScript code";
