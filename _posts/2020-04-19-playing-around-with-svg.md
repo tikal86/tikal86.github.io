@@ -137,6 +137,8 @@ To learn how to best show svgs on my blog pages I am playing around with the opt
 
 <object
     type="text/html"
-    data="https://tikal86.github.io/reactive-programming/index.html"> 
+    data="https://tikal86.github.io/reactive-programming/index.html"
+    width="900"
+    height="740"> 
     Your browser doesn’t support the object tag. 
 </object>
