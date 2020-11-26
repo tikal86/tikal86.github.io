@@ -135,11 +135,13 @@ To learn how to best show svgs on my blog pages I am playing around with the opt
 #### blur different size
 ![blur circle](/images/blur.svg){:height="600px" width="300px"}
 
+<div style="margin:0 auto">
 <object
     type="text/html"
     data="https://tikal86.github.io/reactive-programming/index.html"
-    width="540"
-    height="278"
-    style="margin:auto"> 
+    width="600"
+    height="500"
+    style="margin:0 auto"> 
     Your browser doesn’t support the object tag. 
 </object>
+</div>
