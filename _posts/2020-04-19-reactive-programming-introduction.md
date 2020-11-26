@@ -157,4 +157,6 @@ The next installment will talk about what types of observables and observers the
 
 [Functional programming](https://en.wikipedia.org/wiki/Functional_programming) 
 
+[Moving marbles](https://tikal86.github.io/reactive-programming/)
+
 PS: the images are created similar to the one from <a href="https://rxmarbles.com/">rxmarbles</a> to prevent having another display language for reactive programming.
