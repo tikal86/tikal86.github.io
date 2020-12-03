@@ -10,3 +10,5 @@ I work for VX Company in the Netherlands
 
 In my spare time I play tennis and golf
 When I am not doing that I work on hobby programming projects
+
+At the moment I am into Reactive Programming (frontend and backend) and functional programming in the frontend wit Elm.

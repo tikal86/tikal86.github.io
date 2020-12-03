@@ -9,7 +9,6 @@ tags: [functional, programming, elm]
 # Programming with Elm
 This is a blog series about functional programming with Elm.
 
-
 ## Why start programming with Elm?
 I am a software engineer for a long time and have been programming in an Object Oriented way my whole career, mostly in Java. I like discovering new things and for a time that was mostly Java related. But while there was a lot of development around Java(not much in the language itself), it felt like more of the same. A new librtary here and there but mostly on known concepts. When I learned to program for the frontend, a whole new world opened. It felt like Java in the early days. Lots of frameworks and libraries popping up, great. 
 
@@ -22,23 +21,41 @@ Elm is a functional programming language for the frontend. Or as they say on the
 ## The goal
 The goal is to make a desktop application that can read json files from the file system and can display it on the screen. That means not only the challenge of learning Elm, but also to create an application with electron and Elm.
 
+### Too much moving parts
+The first thing I did was searching for existing solutions of frameworks which use both elm and electron. There are quite a few and since I wanted to communicate both from Elm to frontend javascript and from frontend javascript to backend javascript (which uses the ipc part of electron) I chose Elm Electron Starter. It has all the communications needed but uses Typescript and webapck, which I don't have too much knowledge of. But it looked good and after the checkout it worked. The first challenge was, that it was using Elm 0.18 and I wanted to use the laterst versin, which is 0.19. Since the Elm compiler should be pretty helpful, I was up for the challenge. And it was not that difficult. But then it did start, but the Elm part did not show up anymore. After countless attempts of trying to fix this, I gave up. My lack of knowledge of Typescript, electron and webpack made it too difficult. 
+
+### The simple guide
+So I went looking for a simpler way and found Elm electron webpack. It was more a guide than a ready to use template. And that was a good thing. It started simple, using only electron. Then mixing in Elm and finally webpack. 
+
+#### Upgrading elm 0.19
+It also uses Elm 0.18, but the conversion was again easily done. The hardest part was choosing which function tio use from 'Browser'. The elm guide has a page for it that explaains the differences. For now Browser.element is enough and works.
+
+But as before it did not show the elm part. 
+The error was:
+[Electron error](electron-error.png)
+
+
+Since I could now test with only Elm and Javascript, it was easier to find and fix the problem. 
 {% highlight java %}
     Observable.just("Hello observable without backpressure")
     .filter(text -> text.startsWith("Hello"))
     .subscribe(System.out::println);
 {% endhighlight %}
 
-### Too much moving parts
-The first thing I did was searching for existing solutions of frameworks which use both elm and electron. There are quite a few and since I wanted to communicate both from Elm to frontend javascript and from frontend javascript to backend javascript (which uses the ipc part of electron) I chose Elm Electron Starter. It has all the communications needed but uses Typescript and webapck, which I don't have too much knowledge of. But it looked good and after the checkout it worked. The first challenge was, that it was using Elm 0.18 and I wanted to use the laterst versin, which is 0.19. Since the Elm compiler should be pretty helpful, I was up for the challenge. And it was not that difficult. But then it did start, but the Elm part did not show up anymore. After countless attempts of trying to fix this, I gave up. My lack of knowledge of Typescript, electron and webpack made it too difficult. 
+#### Webpack
+Then onto webpack, the first part went without problems, but the devserver did not. The latest version of webpack does not support the old dev server. I tried 'webpack serve' that did start without problems, but electron was never started and the files were not served to localhost. So even if electron was started, no Elm screen was shown.
 
+#### Without webpack
+Running without webpack is not a problem, the only thing is you need to restart the app every time.
+{% highlight bash %}
+    npm run start
+{% endhighlight %}
 
-### The simple guide
-So I went looking for a simpler way and found Elm electron webpack. It was more a guide than a ready to use template. And that was a good thing. It started simple, using only electron. Then mixing in Elm and finally webpack. It also uses Elm 0.18, but the conversion was again easily done. But as before it did not show the elm part. Since I could now test with only Elm and Javascript, it was easier to find and fix the problem. Then onto webpack, the first part went without problems, but the devserver did not. The latest version of webpack does not support the old dev server. I tried 'webpack serve' that did start without problems, but electron was never started and the files were not served to localhost. So even if electron was started, no Elm screen was shown.
-
-### Talking with javascript
-The Elm electron webpack guide does not show how to let Elm talk with javascrtipt, so the official elm guide was used. There is a example how to connect elm to javascript with ports. it is not that complicated and it worked pretty soon.
-
-### Talking with the backend
+#### Running only elm
+Since it is no running without problems in electron, the latter problem can be fixed by not running it in electron and using the elm reactor.
+{% highlight bash %}
+    npm run start
+{% endhighlight %}
 
 ## The conclusion
 I am glad that in the end I got it working with Elm 0.19 and electron. The guide helped me a lot to understand all the moving parts.

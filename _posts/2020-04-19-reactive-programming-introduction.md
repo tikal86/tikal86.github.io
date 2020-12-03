@@ -71,8 +71,10 @@ An observable should be subscribed to an observable to recieve data. When a subs
 Creating an observable with and without backpressure in RxJava can be done with factory methods:
 
 {% highlight java %}
+
     Observable.just("Hello observable without backpressure");
     Flowable.just("Hello flowable");
+
 {% endhighlight %}
 
 #### What is an observer?
@@ -86,7 +88,9 @@ An observer listens to an observable. It subscribes to the observable and gets a
 An observer can be as simple as a lambda expression or a method reference.
 
 {% highlight java %}
+
     .subscribe(System.out::println);
+
 {% endhighlight %}
  
 
@@ -111,9 +115,11 @@ An operation can also be a lambda expression or a method reference e.g. like a f
 A complete example would look like
 
 {% highlight java %}
+
     Observable.just("Hello observable without backpressure")
     .filter(text -> text.startsWith("Hello"))
     .subscribe(System.out::println);
+
 {% endhighlight %}
 
 
