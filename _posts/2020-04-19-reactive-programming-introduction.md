@@ -117,6 +117,19 @@ A complete example would look like
 {% endhighlight %}
 
 
+And here is a small animation to show the process (click on 'Start animation' to start or restart the animation)
+<div style="text-align:center">
+<object
+    type="text/html"
+    data="https://tikal86.github.io/reactive-programming/index.html"
+    width="600"
+    height="500"
+    style="margin:0 auto"> 
+    Your browser doesn’t support the object tag. 
+</object>
+</div>
+
+
 ## Why would reactive programming be used ?
 
 The advantages of reactive programming are that it avoids stateful programs, uses clean input/output functions over observable streams and allows the programmer to abstract away low-level threading, synchronization, and concurrency issues. 
