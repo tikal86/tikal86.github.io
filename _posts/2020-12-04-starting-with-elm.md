@@ -27,8 +27,75 @@ The first thing I did was searching for existing solutions of frameworks which u
 ### The simple guide
 So I went looking for a simpler way and found Elm electron webpack. It was more a guide than a ready to use template. And that was a good thing. It started simple, using only electron. Then mixing in Elm and finally webpack. 
 
+The elm part was a problem, because I had already installed elm 0.19. It compiled, but there was an error in electron.
+
+{% highlight javascript %}
+    index.html:11 Uncaught ReferenceError: require is not defined
+{% endhighlight %}
+
+According to the elm documentation a 
+{% highlight javascript %}
+    Elm.Main.init();
+{% endhighlight %}
+should be enough. unfortunately another error cropped up.
+{% highlight javascript %}
+    Uncaught TypeError: Elm.Main.init is not a function
+{% endhighlight %}
+After looking at the generated bundle.js, it appears there should be an init function
+
+{% highlight javascript %}
+var Elm = {};
+Elm['Main'] = Elm['Main'] || {};
+_elm_lang$core$Native_Platform.addPublicModule(Elm['Main'], 'Main', typeof _user$project$Main$main === 'undefined' ? null : _user$project$Main$main);
+{% endhighlight %}
+
+calls 'addPublicModule' with arguments , object Elm.Main, sttring 'Main' and _user$project$Main$main which is
+
+{% highlight javascript %}
+    main: _elm_lang$html$Html$text('Hello Electron. I\'m Elm.')
+{% endhighlight %}
+
+In the function addPublicModule the int method is defined.
+{% highlight javascript %}
+function addPublicModule(object, name, main)
+{
+	var init = main ? makeEmbed(name, main) : mainIsUndefined(name);
+
+	object['worker'] = function worker(flags)
+	{
+		return init(undefined, flags, false);
+	}
+
+	object['embed'] = function embed(domNode, flags)
+	{
+		return init(domNode, flags, true);
+	}
+
+	object['fullscreen'] = function fullscreen(flags)
+	{
+		return init(document.body, flags, true);
+	};
+}
+{% endhighlight %}
+
+makeEmbed returns a function but the init function is never returned. Others, like embed and fullscreen do return a function.
+
+Trying embed with a html node worked.
+
+{% highlight html %}
+    <body>
+        <div id='container'></div>
+        <script src='bundle.js'></script>
+        <script>
+            let app = Elm.Main.embed(document.getElementById('container'));
+        </script>
+    </body>
+{% endhighlight %}
+
+[Success](/images/electron-elm-success.png)
+
 #### Upgrading elm 0.19
-It also uses Elm 0.18, but the conversion was again easily done. The hardest part was choosing which function tio use from 'Browser'. The elm guide has a page for it that explaains the differences. For now Browser.element is enough and works.
+It also uses Elm 0.18, but the conversion was again easily done. The hardest part was choosing which function to use from 'Browser'. The elm guide has a page for it that explaains the differences. For now Browser.element is enough and works.
 
 But as before it did not show the elm part. 
 The error was:
@@ -36,7 +103,7 @@ The error was:
 
 
 Since I could now test with only Elm and Javascript, it was easier to find and fix the problem. 
-{% highlight java %}
+{% highlight javascript %}
     Observable.just("Hello observable without backpressure")
     .filter(text -> text.startsWith("Hello"))
     .subscribe(System.out::println);
