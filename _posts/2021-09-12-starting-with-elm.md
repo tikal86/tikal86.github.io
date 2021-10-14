@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Starting functional programming with Elm"
-date:   2020-11-14 17:40:59
+date:   2021-09-12 17:40:59
 categories: [elm]
 tags: [functional, programming, elm]
 ---
@@ -22,7 +22,16 @@ Elm is a functional programming language for the frontend. Or as they say on the
 The goal is to make a desktop application that can read json files from the file system and can display it on the screen. That means not only the challenge of learning Elm, but also to create an application with electron and Elm.
 
 ### Too much moving parts
-The first thing I did was searching for existing solutions of frameworks which use both elm and electron. There are quite a few and since I wanted to communicate both from Elm to frontend javascript and from frontend javascript to backend javascript (which uses the ipc part of electron) I chose Elm Electron Starter. It has all the communications needed but uses Typescript and webapck, which I don't have too much knowledge of. But it looked good and after the checkout it worked. The first challenge was, that it was using Elm 0.18 and I wanted to use the laterst versin, which is 0.19. Since the Elm compiler should be pretty helpful, I was up for the challenge. And it was not that difficult. But then it did start, but the Elm part did not show up anymore. After countless attempts of trying to fix this, I gave up. My lack of knowledge of Typescript, electron and webpack made it too difficult. 
+The first thing I did was searching for existing solutions of frameworks which use both elm and electron. There are quite a few and since I wanted to communicate both from Elm to frontend javascript and from frontend javascript to backend javascript (which uses the ipc part of electron) I chose Elm Electron Starter. It has all the communications needed but uses Typescript and webpack, which I don't have too much knowledge of. But it looked good and after the checkout it worked. The first challenge was, that it was using Elm 0.18 and I wanted to use the laterst version, which is 0.19. Since the Elm compiler should be pretty helpful, I was up for the challenge. 
+
+### Elm migration part 1
+
+And it was not that difficult. Looking at the compiler output and the documentation, all errors were easily fixed in the elm reactor. The diff is in https://github.com/tikal86/elm-electron-starter/commit/58ca67d926a18bf373d4abec007618ca6bf3cefa
+But when started in the electron application ,the Elm part did not show up. The error was 'Uncaught TypeError: Cannot read property 'init' of undefined'
+
+Try without webpack
+
+After countless attempts of trying to fix this, I gave up. My lack of knowledge of Typescript, electron and webpack made it too difficult. 
 
 ### The simple guide
 So I went looking for a simpler way and found Elm electron webpack. It was more a guide than a ready to use template. And that was a good thing. It started simple, using only electron. Then mixing in Elm and finally webpack. 
@@ -95,7 +104,7 @@ Trying embed with a html node worked.
 [Success](/images/electron-elm-success.png)
 
 #### Upgrading elm 0.19
-It also uses Elm 0.18, but the conversion was again easily done. The hardest part was choosing which function to use from 'Browser'. The elm guide has a page for it that explaains the differences. For now Browser.element is enough and works.
+It also uses Elm 0.18, but the conversion was again easily done. The hardest part was choosing which function to use from 'Browser'. The elm guide has a page for it that explains the differences. For now Browser.element is enough and works.
 
 But as before it did not show the elm part. 
 The error was:
