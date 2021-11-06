@@ -398,8 +398,4 @@ I am glad that in the end I got it working with Elm 0.19 and electron. The guide
 
 [The Elm guide](https://guide.elm-lang.org/)
 
-[Elm Electron Starter](https://github.com/dillonkearns/elm-electron-starter)
-
 [The original Elm electron webpack guide](https://github.com/johnomarkid/elm-electron-webpack)
-
-[My Elm electron webpack fork](https://github.com/tikal86/elm-electron-webpack)
