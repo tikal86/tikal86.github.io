@@ -38,9 +38,13 @@ title: Highligh html in MD files
     document.getElementById("text").innerHTML = "Text added by JavaScript code";
 </script>
 ```
+
 ## Trying different higlighting for different languages
+
 ### Terminal input/output
+
 #### With bash as language
+
 {% highlight bash %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -76,6 +80,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With plaintext
+
 {% highlight plaintext %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -111,6 +116,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With nohighlight
+
 {% highlight nohighlight %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -146,6 +152,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With json as language
+
 {% highlight json %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -181,6 +188,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With javascript as language
+
 {% highlight javascript %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -216,6 +224,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With html as language
+
 {% highlight html %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -251,6 +260,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### Automatic
+
 {% highlight%}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -286,6 +296,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With css as language
+
 {% highlight css%}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
@@ -321,6 +332,7 @@ npm install babel-loader --save-dev
 {% endhighlight %}
 
 #### With markdown as language
+
 {% highlight markdown%}
 elm make src/elm/Main.elm --output src/static/bundle.js
 
