@@ -30,7 +30,7 @@ Getting electron up and working was very simple. In the index.html add or remove
 #### Bringing Elm into the fold
 The elm part was also no problem, the guide use Elm 0.18 and I had already installed elm 0.19. But that was not a problem, because it does not use very much of Elm. The guide let's you build the elm bundle before changing the elm.json file, so it is possible that when you execute 
 
-{% highlight bash %}
+{% highlight%}
 elm make src/elm/Main.elm --output src/static/bundle.js
 {% endhighlight %}
 
@@ -73,7 +73,7 @@ So apply the change that is posted later. Update the elm.json file to find your 
 {% endhighlight %}
 
 Then fire up electron main.js and it should work. Except is didn't. The browser gave an error
-{% highlight json %}
+{% highlight bash %}
 Uncaught ReferenceError: require is not defined
     at index.html:11
 {% endhighlight %}
@@ -96,13 +96,13 @@ function createWindow () {
 Now we can develop an application with elm and electron.
 Use 
 
-{% highlight bash %}
+{% highlight json %}
 elm reactor
 {% endhighlight %}
 
 to enhance the app and 
 
-{% highlight bash %}
+{% highlight javascript %}
 elm make src/elm/Main.elm --output src/static/bundle.js
 electron main.js
 {% endhighlight %}
