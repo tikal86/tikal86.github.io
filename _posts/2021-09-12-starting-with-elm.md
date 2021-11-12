@@ -62,7 +62,7 @@ use this naming convention?
 Note: Having a strict naming convention like this makes it a lot easier to find
 things in large projects. If you see a module imported, you know where to look
 for the corresponding file every time!
-{% endhighlight %}
+</code></pre></figure>
 
 So apply the change that is posted later. Update the elm.json file to find your elm files. 
 
@@ -76,7 +76,7 @@ Then fire up electron main.js and it should work. Except is didn't. The browser 
 <figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">
 Uncaught ReferenceError: require is not defined
     at index.html:11
-{% endhighlight %}
+</code></pre></figure>
 This is because of a later version of electron.
 
 A fix is to use the config option 'contextIsolation: false' in the 'webPreferences' part of 'new BrowserWindow' options.
