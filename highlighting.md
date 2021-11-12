@@ -436,7 +436,7 @@ npm install babel-loader --save-dev
 </code></pre></figure>
 
 #### Html figure with black background
-<figure><pre style="background-color: black;"><code style="color: #66d9ef;border: none">
+<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">
     elm make src/elm/Main.elm --output src/static/bundle.js
 
     I am having trouble with this file name:

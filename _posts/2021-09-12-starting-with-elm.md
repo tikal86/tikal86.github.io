@@ -30,13 +30,13 @@ Getting electron up and working was very simple. In the index.html add or remove
 #### Bringing Elm into the fold
 The elm part was also no problem, the guide use Elm 0.18 and I had already installed elm 0.19. But that was not a problem, because it does not use very much of Elm. The guide let's you build the elm bundle before changing the elm.json file, so it is possible that when you execute 
 
-{% highlight bash%}
+{% highlight javascript%}
 elm make src/elm/Main.elm --output src/static/bundle.js
 {% endhighlight %}
 
 nothing is produced and an error is shown:
 
-{% highlight bash %}
+<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">
 Detected a problem.
 -- UNEXPECTED FILE NAME --------------------------------------------------------
 
@@ -73,7 +73,7 @@ So apply the change that is posted later. Update the elm.json file to find your 
 {% endhighlight %}
 
 Then fire up electron main.js and it should work. Except is didn't. The browser gave an error
-{% highlight bash %}
+<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">
 Uncaught ReferenceError: require is not defined
     at index.html:11
 {% endhighlight %}
@@ -96,7 +96,7 @@ function createWindow () {
 Now we can develop an application with elm and electron.
 Use 
 
-{% highlight json %}
+{% highlight javascript %}
 elm reactor
 {% endhighlight %}
 
@@ -111,14 +111,14 @@ to check it in electron
 
 #### Without webpack
 Running without webpack is not a problem, the only thing is you need to restart the app every time.
-{% highlight bash %}
+{% highlight javascript %}
     npm run start
 {% endhighlight %}
 
 #### Running only elm
 Since it is not running without problems in electron, the latter problem can be fixed by not running it in electron and using the elm reactor.
 {% highlight bash %}
-    npm run start
+    elm reactor
 {% endhighlight %}
 
 ## The conclusion
