@@ -72,9 +72,8 @@ So apply the change that is posted later. Update the elm.json file to find your 
 ],
 {% endhighlight %}
 
-Then fire up electron main.js and it should work. Except is didn't. The browser gave an error
-<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">
-Uncaught ReferenceError: require is not defined
+Then fire up 'electron main.js' and it should work. Except it didn't. There was a browser error
+<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">Uncaught ReferenceError: require is not defined
     at index.html:11
 </code></pre></figure>
 This is because of a later version of electron.
@@ -109,17 +108,35 @@ electron main.js
 
 to check it in electron
 
-#### Without webpack
-Running without webpack is not a problem, the only thing is you need to restart the app every time.
-{% highlight javascript %}
-    npm run start
-{% endhighlight %}
+To make life easier there are scripts for npm
 
-#### Running only elm
-Since it is not running without problems in electron, the latter problem can be fixed by not running it in electron and using the elm reactor.
-{% highlight bash %}
-    elm reactor
+{% highlight javascript %}
+npm run elm
 {% endhighlight %}
+To start the elm reactor and launch a webbrowser on http://localhost:8000
+PS: This might not work on Windows
+
+{% highlight javascript %}
+npm run electron
+{% endhighlight %}
+To build elm and start electron
+
+{% highlight javascript %}
+npm run reactor
+{% endhighlight %}
+To start elm reactor without opening a browser window
+PS: This might not work on Windows
+
+{% highlight javascript %}
+npm run build
+{% endhighlight %}
+To build elm
+
+{% highlight javascript %}
+npm run start
+{% endhighlight %}
+To start electron without building elm
+
 
 ## The conclusion
 I am glad that in the end I got it working with Elm 0.19 and electron. The guide helped me a lot to understand all the moving parts.
@@ -131,3 +148,5 @@ I am glad that in the end I got it working with Elm 0.19 and electron. The guide
 [The Elm guide](https://guide.elm-lang.org/)
 
 [The original Elm electron webpack guide](https://github.com/johnomarkid/elm-electron-webpack)
+
+[The code](https://github.com/tikal86/starting-with-elm.git)
