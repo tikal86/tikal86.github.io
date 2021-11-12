@@ -370,13 +370,13 @@ npm install babel-loader --save-dev
     elm make src/elm/Main.elm --output src/static/bundle.js
 
     I am having trouble with this file name:
-
+                                                                                        
         src/elm/Main.elm
-
-    I found it in your /home/andre/git/repo/starting-with-elm/src/ directory which
-    is good, but I expect all of the files in there to use the following module
-    naming convention:
-
+                                                                                        
+    I found it in your /home/andre/git/repo/starting-with-elm/src/ directory which      
+    is good, but I expect all of the files in there to use the following module         
+    naming convention:                                                                  
+                                                                                        
         +--------------+-------------------------------------------------------------+
         | Module Name  | File Path                                                   |
         +--------------+-------------------------------------------------------------+
@@ -384,19 +384,19 @@ npm install babel-loader --save-dev
         | HomePage     | /home/andre/git/repo/starting-with-elm/src/HomePage.elm     |
         | Http.Helpers | /home/andre/git/repo/starting-with-elm/src/Http/Helpers.elm |
         +--------------+-------------------------------------------------------------+
-
-    Notice that the names always start with capital letters! Can you make your file
-    use this naming convention?
-
-    Note: Having a strict naming convention like this makes it a lot easier to find
-    things in large projects. If you see a module imported, you know where to look
-    for the corresponding file every time!
-
-    npm install html-webpack-plugin --save-dev
-    npm install mini-css-extract-plugin --save-dev
-    npm install workbox-webpack-plugin --save-dev
-    npm install babel-loader --save-dev
-
+                                                                                        
+    Notice that the names always start with capital letters! Can you make your file     
+    use this naming convention?                                                         
+                                                                                        
+    Note: Having a strict naming convention like this makes it a lot easier to find     
+    things in large projects. If you see a module imported, you know where to look      
+    for the corresponding file every time!                                              
+                                                                                        
+    npm install html-webpack-plugin --save-dev                                          
+    npm install mini-css-extract-plugin --save-dev                                      
+    npm install workbox-webpack-plugin --save-dev                                       
+    npm install babel-loader --save-dev                                                 
+                                                                                        
     [webpack-cli] Error: Compiling RuleSet failed: Query arguments on 'loader' has been removed in favor of the 'options' property (at ruleSet[1].rules[3].loader: elm-webpack?verbose=true&warn=true)
 ~~~
 
@@ -436,7 +436,7 @@ npm install babel-loader --save-dev
 </code></pre></figure>
 
 #### Html figure with black background
-<figure><pre><code style="background-color: black; color: white">
+<figure><pre style="background-color: black;"><code style="background-color: black; color: white">
     elm make src/elm/Main.elm --output src/static/bundle.js
 
     I am having trouble with this file name:
