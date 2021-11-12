@@ -110,32 +110,32 @@ to check it in electron
 
 To make life easier there are scripts for npm
 
+To start the elm reactor and launch a webbrowser on http://localhost:8000
 {% highlight javascript %}
 npm run elm
 {% endhighlight %}
-To start the elm reactor and launch a webbrowser on http://localhost:8000
 PS: This might not work on Windows
 
+To build elm and start electron
 {% highlight javascript %}
 npm run electron
 {% endhighlight %}
-To build elm and start electron
+PS: This might not work on Windows
 
+To start elm reactor without opening a browser window
 {% highlight javascript %}
 npm run reactor
 {% endhighlight %}
-To start elm reactor without opening a browser window
-PS: This might not work on Windows
 
+To build elm
 {% highlight javascript %}
 npm run build
 {% endhighlight %}
-To build elm
 
+To start electron without building elm
 {% highlight javascript %}
 npm run start
 {% endhighlight %}
-To start electron without building elm
 
 
 ## The conclusion
