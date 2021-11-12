@@ -27,6 +27,69 @@ I looked on the web for combinations of electron and elm and found Elm electron 
 #### Electron
 Getting electron up and working was very simple. In the index.html add or remove some text to see something else. Then fire up electron main.js (or npx electron main.js if you installed it locally) and a window with the text and title should show up. A good start.
 
+#### Bringing Elm into the fold
+The elm part was also no problem, the guide use Elm 0.18 and I had already installed elm 0.19. But that was not a problem, because it does not use very much of Elm. The guide let's you build the elm bundle before changing the elm.json file, so it is possible that when you execute 
+
+{% highlight%}
+elm make src/elm/Main.elm --output src/static/bundle.js
+{% endhighlight %}
+
+nothing is produced and an error is shown:
+
+{% highlight bash %}
+Notice that the names always start with capital letters! Can you make your file
+use this naming convention?
+
+Note: Having a strict naming convention like this makes it a lot easier to find
+things in large projects. If you see a module imported, you know where to look
+for the corresponding file every time!
+{% endhighlight %}
+
+So apply the change that is posted later. Update the elm.json file to find your elm files. 
+
+{% highlight json %}
+"source-directories": [
+    "src/elm"
+],
+{% endhighlight %}
+
+Then fire up electron main.js and it should work. Except is didn't. The browser gave an error
+{% highlight bash %}
+Uncaught ReferenceError: require is not defined
+    at index.html:11
+{% endhighlight %}
+This is because of a later version of electron.
+
+A fix is to use the config option 'contextIsolation: false' in the 'webPreferences' part of 'new BrowserWindow' options.
+It does make electron less safe, because the client and server part are in the same context now.
+{% highlight javascript %}
+function createWindow () {
+  mainWindow = new BrowserWindow({
+    width: 1024,
+    height: 768,
+    webPreferences: {
+        nodeIntegration: true, 
+        contextIsolation: false
+    }
+  })
+{% endhighlight %}
+
+Now we can develop an application with elm and electron.
+Use 
+
+{% highlight json %}
+elm reactor
+{% endhighlight %}
+
+to enhance the app and 
+
+{% highlight javascript %}
+elm make src/elm/Main.elm --output src/static/bundle.js
+electron main.js
+{% endhighlight %}
+
+to check it in electron
+
 #### Without webpack
 Running without webpack is not a problem, the only thing is you need to restart the app every time.
 {% highlight bash %}
