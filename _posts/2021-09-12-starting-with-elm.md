@@ -37,6 +37,25 @@ elm make src/elm/Main.elm --output src/static/bundle.js
 nothing is produced and an error is shown:
 
 {% highlight bash %}
+Detected a problem.
+-- UNEXPECTED FILE NAME --------------------------------------------------------
+
+I am having trouble with this file name:
+
+    src/elm/Main.elm
+
+I found it in your /home/andre/git/repo/starting-with-elm/src/ directory which
+is good, but I expect all of the files in there to use the following module
+naming convention:
+
+    +--------------+-------------------------------------------------------------+
+    | Module Name  | File Path                                                   |
+    +--------------+-------------------------------------------------------------+
+    | Main         | /home/andre/git/repo/starting-with-elm/src/Main.elm         |
+    | HomePage     | /home/andre/git/repo/starting-with-elm/src/HomePage.elm     |
+    | Http.Helpers | /home/andre/git/repo/starting-with-elm/src/Http/Helpers.elm |
+    +--------------+-------------------------------------------------------------+
+
 Notice that the names always start with capital letters! Can you make your file
 use this naming convention?
 
