@@ -331,3 +331,37 @@ npm install babel-loader --save-dev
 [webpack-cli] Error: Compiling RuleSet failed: Query arguments on 'loader' has been removed in favor of the 'options' property (at ruleSet[1].rules[3].loader: elm-webpack?verbose=true&warn=true)
 {% endhighlight %}
 
+#### Codeblock
+
+    elm make src/elm/Main.elm --output src/static/bundle.js
+
+    I am having trouble with this file name:
+
+        src/elm/Main.elm
+
+    I found it in your /home/andre/git/repo/starting-with-elm/src/ directory which
+    is good, but I expect all of the files in there to use the following module
+    naming convention:
+
+        +--------------+-------------------------------------------------------------+
+        | Module Name  | File Path                                                   |
+        +--------------+-------------------------------------------------------------+
+        | Main         | /home/andre/git/repo/starting-with-elm/src/Main.elm         |
+        | HomePage     | /home/andre/git/repo/starting-with-elm/src/HomePage.elm     |
+        | Http.Helpers | /home/andre/git/repo/starting-with-elm/src/Http/Helpers.elm |
+        +--------------+-------------------------------------------------------------+
+
+    Notice that the names always start with capital letters! Can you make your file
+    use this naming convention?
+
+    Note: Having a strict naming convention like this makes it a lot easier to find
+    things in large projects. If you see a module imported, you know where to look
+    for the corresponding file every time!
+
+    npm install html-webpack-plugin --save-dev
+    npm install mini-css-extract-plugin --save-dev
+    npm install workbox-webpack-plugin --save-dev
+    npm install babel-loader --save-dev
+
+    [webpack-cli] Error: Compiling RuleSet failed: Query arguments on 'loader' has been removed in favor of the 'options' property (at ruleSet[1].rules[3].loader: elm-webpack?verbose=true&warn=true)
+
