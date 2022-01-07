@@ -64,7 +64,7 @@ things in large projects. If you see a module imported, you know where to look
 for the corresponding file every time!
 </code></pre></figure>
 
-So apply the change that is posted later. Update the elm.json file to find your elm files. 
+So apply the change that is posted later in the guide, update the elm.json file to find your elm files. 
 
 {% highlight json %}
 "source-directories": [
@@ -76,7 +76,7 @@ Then fire up 'electron main.js' and it should work. Except it didn't. There was 
 <figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">Uncaught ReferenceError: require is not defined
     at index.html:11
 </code></pre></figure>
-This is because of a later version of electron.
+This is because of a later version of electron is used compared to the guide. The new version separates the browser process from the node process.
 
 A fix is to use the config option 'contextIsolation: false' in the 'webPreferences' part of 'new BrowserWindow' options.
 It does make electron less safe, because the client and server part are in the same context now.
@@ -108,13 +108,13 @@ electron main.js
 
 to check it in electron
 
-To make life easier there are scripts for npm
+To make life easier there are scripts for npm in the package.json file
 
-To start the elm reactor and launch a webbrowser on http://localhost:8000
+To start the elm reactor and launch a webbrowser (firefox) on http://localhost:8000
 {% highlight javascript %}
 npm run elm
 {% endhighlight %}
-PS: This might not work on Windows
+PS: This might not work on Windows, because of the chaining of commands
 
 To build elm and start electron
 {% highlight javascript %}
@@ -139,7 +139,14 @@ npm run start
 
 
 ## The conclusion
-I am glad that in the end I got it working with Elm 0.19 and electron. The guide helped me a lot to understand all the moving parts.
+I am glad that in the end I got it working with Elm 0.19 and electron. The guide helped me a lot to understand all the moving parts. In the next parts we can start building an application. 
+
+## What about webpack?
+The original guide included webpack. The version of webpack used was version 1. The elm-loader for webpack version 1 does not support Elm 0.19. Since I wanted to use the latest version of Elm this was not an option.
+
+I tried to make it work with the latest version of webpack, but this was not a simple task.
+(If you want to see the [attempt](https://tikal86.github.io/elm/failed-webpack-configuration)), but not a successful one.
+But since this is about Elm and not webpack, this is not a big problem.
 
 ## References
 
