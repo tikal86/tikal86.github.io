@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Failed webpack configuration"
+date:   2022-01-07
+categories: [elm]
+tags: [webpack, elm]
+---
+
 #### Webpack
 Then onto webpack, the guide was written with an older version of webpack in mind. The config schema is changed and so the proposed config does not work. So webpack init was run to create a new config file. The follwing answers were given to the questions asked by webpack init:
 
