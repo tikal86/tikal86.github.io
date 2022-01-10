@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Starting functional programming with Elm"
-date:   2021-11-12
+date:   2022-01-07
 categories: [elm]
 tags: [functional, programming, elm]
 ---
