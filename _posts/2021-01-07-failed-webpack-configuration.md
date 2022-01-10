@@ -118,12 +118,12 @@ Besides this, it also said "Tip: Check your console". And indeed the console had
 <figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: xx-small">
 andre@HP-ProBook-470-G5:
 ~/git/repo/starting-with-elm$ npx webpack serve
-<i> [webpack-dev-server] Project is running at:
-<i> [webpack-dev-server] 
+ [webpack-dev-server] Project is running at:
+ [webpack-dev-server] 
     Loopback: http://localhost:8080/, http://127.0.0.1:8080/
-<i> [webpack-dev-server] Content not from webpack is served from 
+ [webpack-dev-server] Content not from webpack is served from 
     '/home/andre/git/repo/starting-with-elm/public' directory
-<i> [webpack-dev-middleware] wait until bundle finished: /
+ [webpack-dev-middleware] wait until bundle finished: /
 asset bundle.js 121 KiB [emitted] (name: main)
 asset index.html 825 bytes [emitted]
 runtime modules 27 KiB 12 modules
@@ -140,19 +140,28 @@ cacheable modules 59.8 KiB
     ./src/elm/Main.elm 39 bytes [built] [code generated] [1 error]
   ./node_modules/webpack/hot/dev-server.js 1.63 KiB [built] [code generated]
 
-ERROR in ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 2:0-47
-Module not found: Error: Can't resolve 'webpack/hot/log.js' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
+ERROR in ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+port=8080&pathname=%2Fws&logging=info&reconnect=10 2:0-47
+Module not found: Error: Can't resolve 'webpack/hot/log.js' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
 
 ERROR in ./node_modules/webpack-dev-server/client/overlay.js 3:0-43
-Module not found: Error: Can't resolve 'ansi-html-community' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
+Module not found: Error: Can't resolve 'ansi-html-community' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&
+ reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
 
 ERROR in ./node_modules/webpack-dev-server/client/overlay.js 4:0-39
-Module not found: Error: Can't resolve 'html-entities' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
+Module not found: Error: Can't resolve 'html-entities' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&
+ reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
 
 ERROR in ./node_modules/webpack-dev-server/client/utils/createSocketURL.js 1:0-22
-Module not found: Error: Can't resolve 'url' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
+Module not found: Error: Can't resolve 'url' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
 
 BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.
 This is no longer the case. Verify if you need this module and configure a polyfill for it.
@@ -162,10 +171,12 @@ If you want to include a polyfill, you need to:
         - install 'url'
 If you don't want to include a polyfill, you can use an empty module like this:
         resolve.fallback: { "url": false }
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 10:0-57 199:16-31
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&reconnect=10 10:0-57 199:16-31
 
 ERROR in ./node_modules/webpack-dev-server/client/utils/parseURL.js 1:0-22
-Module not found: Error: Can't resolve 'url' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
+Module not found: Error: Can't resolve 'url' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
 
 BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.
 This is no longer the case. Verify if you need this module and configure a polyfill for it.
@@ -175,28 +186,37 @@ If you want to include a polyfill, you need to:
         - install 'url'
 If you don't want to include a polyfill, you can use an empty module like this:
         resolve.fallback: { "url": false }
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 4:0-43 23:26-34
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&reconnect=10 4:0-43 23:26-34
 
 ERROR in ./node_modules/webpack-dev-server/client/utils/reloadApp.js 2:0-48
-Module not found: Error: Can't resolve 'webpack/hot/emitter.js' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 9:0-45 127:4-13 161:4-13
+Module not found: Error: Can't resolve 'webpack/hot/emitter.js' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&reconnect=10 9:0-45 127:4-13 161:4-13
 
 ERROR in ./node_modules/webpack/hot/dev-server.js 14:12-28
-Module not found: Error: Can't resolve './log' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
+Module not found: Error: Can't resolve './log' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
 
 ERROR in ./node_modules/webpack/hot/dev-server.js 29:6-35
-Module not found: Error: Can't resolve './log-apply-result' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
+Module not found: Error: Can't resolve './log-apply-result' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
 
 ERROR in ./node_modules/webpack/hot/dev-server.js 47:19-39
-Module not found: Error: Can't resolve './emitter' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
+Module not found: Error: Can't resolve './emitter' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
 
 ERROR in ./src/elm/Main.elm
 Module build failed (from ./node_modules/elm-webpack-loader/index.js):
-Error: ENOENT: no such file or directory, open '/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
+Error: ENOENT: no such file or directory, open 
+'/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
     at Object.openSync (node:fs:583:3)
     at Object.readFileSync (node:fs:451:35)
-    at filesToWatch (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:56:23)
-    at Object.module.exports (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:108:24)
+    at filesToWatch 
+      (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:56:23)
+    at Object.module.exports 
+      (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:108:24)
  @ ./src/static/index.js 2:10-32
 
 9 errors have detailed information that is not shown.
@@ -213,19 +233,28 @@ cached modules 59.8 KiB [cached] 14 modules
 runtime modules 27 KiB 12 modules
 ./src/elm/Main.elm 39 bytes [built] [1 error]
 
-ERROR in ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 2:0-47
-Module not found: Error: Can't resolve 'webpack/hot/log.js' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
+ERROR in ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+port=8080&pathname=%2Fws&logging=info&reconnect=10 2:0-47
+Module not found: Error: Can't resolve 'webpack/hot/log.js' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
 
 ERROR in ./node_modules/webpack-dev-server/client/overlay.js 3:0-43
-Module not found: Error: Can't resolve 'ansi-html-community' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
+Module not found: Error: Can't resolve 'ansi-html-community' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&
+ reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
 
 ERROR in ./node_modules/webpack-dev-server/client/overlay.js 4:0-39
-Module not found: Error: Can't resolve 'html-entities' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
+Module not found: Error: Can't resolve 'html-entities' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client'
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&
+ reconnect=10 6:0-57 77:6-10 115:6-10 124:6-10 142:27-40 158:6-10 167:28-41 183:6-10 193:6-10
 
 ERROR in ./node_modules/webpack-dev-server/client/utils/createSocketURL.js 1:0-22
-Module not found: Error: Can't resolve 'url' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
+Module not found: Error: Can't resolve 'url' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
 
 BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.
 This is no longer the case. Verify if you need this module and configure a polyfill for it.
@@ -235,10 +264,12 @@ If you want to include a polyfill, you need to:
         - install 'url'
 If you don't want to include a polyfill, you can use an empty module like this:
         resolve.fallback: { "url": false }
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 10:0-57 199:16-31
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&reconnect=10 10:0-57 199:16-31
 
 ERROR in ./node_modules/webpack-dev-server/client/utils/parseURL.js 1:0-22
-Module not found: Error: Can't resolve 'url' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
+Module not found: Error: Can't resolve 'url' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
 
 BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.
 This is no longer the case. Verify if you need this module and configure a polyfill for it.
@@ -248,28 +279,37 @@ If you want to include a polyfill, you need to:
         - install 'url'
 If you don't want to include a polyfill, you can use an empty module like this:
         resolve.fallback: { "url": false }
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 4:0-43 23:26-34
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&reconnect=10 4:0-43 23:26-34
 
 ERROR in ./node_modules/webpack-dev-server/client/utils/reloadApp.js 2:0-48
-Module not found: Error: Can't resolve 'webpack/hot/emitter.js' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
- @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&port=8080&pathname=%2Fws&logging=info&reconnect=10 9:0-45 127:4-13 161:4-13
+Module not found: Error: Can't resolve 'webpack/hot/emitter.js' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack-dev-server/client/utils'
+ @ ./node_modules/webpack-dev-server/client/index.js?protocol=ws%3A&hostname=localhost&
+ port=8080&pathname=%2Fws&logging=info&reconnect=10 9:0-45 127:4-13 161:4-13
 
 ERROR in ./node_modules/webpack/hot/dev-server.js 14:12-28
-Module not found: Error: Can't resolve './log' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
+Module not found: Error: Can't resolve './log' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
 
 ERROR in ./node_modules/webpack/hot/dev-server.js 29:6-35
-Module not found: Error: Can't resolve './log-apply-result' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
+Module not found: Error: Can't resolve './log-apply-result' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
 
 ERROR in ./node_modules/webpack/hot/dev-server.js 47:19-39
-Module not found: Error: Can't resolve './emitter' in '/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
+Module not found: Error: Can't resolve './emitter' in 
+'/home/andre/git/repo/starting-with-elm/node_modules/webpack/hot'
 
 ERROR in ./src/elm/Main.elm
 Module build failed (from ./node_modules/elm-webpack-loader/index.js):
-Error: ENOENT: no such file or directory, open '/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
+Error: ENOENT: no such file or directory, open 
+'/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
     at Object.openSync (node:fs:583:3)
     at Object.readFileSync (node:fs:451:35)
-    at filesToWatch (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:56:23)
-    at Object.module.exports (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:108:24)
+    at filesToWatch 
+    (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:56:23)
+    at Object.module.exports 
+    (/home/andre/git/repo/starting-with-elm/node_modules/elm-webpack-loader/index.js:108:24)
  @ ./src/static/index.js 2:10-32
 
 9 errors have detailed information that is not shown.
@@ -279,7 +319,8 @@ webpack 5.59.1 compiled with 10 errors in 211 ms
 </code></pre></figure>
 
 The most important one is
-Error: ENOENT: no such file or directory, open '/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
+Error: ENOENT: no such file or directory, open 
+'/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
 
 The elm-webpack-loader docs says to point the elSource variable to the elm.json file.
 I didn't. After that at least that part worked
