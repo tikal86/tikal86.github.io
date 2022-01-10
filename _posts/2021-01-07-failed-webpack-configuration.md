@@ -7,7 +7,7 @@ tags: [webpack, elm]
 ---
 
 ## Webpack configuration for elm electron starting guide
-This post is a sidelane from the blog [starting with elm](https://tikal86.github.io/elm/starting-with-elm)
+This post is a small deviation from the blog [starting with elm](https://tikal86.github.io/elm/starting-with-elm)
 That describes the setup for an elm application within electron with the help of a guide from github.
 This describes the failed attempt to configure webpack and a dev server for that project. 
 
