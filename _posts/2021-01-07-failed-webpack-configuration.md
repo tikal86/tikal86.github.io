@@ -6,7 +6,7 @@ categories: [elm]
 tags: [webpack, elm]
 ---
 
-# Webpack configuration for elm electron starting guide
+## Webpack configuration for elm electron starting guide
 This post is a sidelane from the blog [starting with elm](https://tikal86.github.io/elm/starting-with-elm)
 That describes the setup for an elm application within electron with the help of a guide from github.
 This describes the failed attempt to configure webpack and a dev server for that project. 
@@ -39,7 +39,7 @@ The guide was written with an older version of webpack in mind. The config schem
 After that change the entry in the webpack.config.js for entry, because webpack uses './src/index.js' as default.
 And add the elm loader to the module/rules/ list. Luckily we can copy that paert from the guide
 
-{% highlight markdown %}
+{% highlight javascript %}
 {
     test:    /\.elm$/,
     exclude: [/elm-stuff/, /node_modules/],
@@ -61,12 +61,14 @@ Now there are no validation errors anymore, we can start webpack.
 Unfortunately there is still an error when run:
 
 {% highlight javascript %}
-[webpack-cli] Error: Compiling RuleSet failed: Query arguments on 'loader' has been removed in favor of the 'options' property (at ruleSet[1].rules[3].loader: elm-webpack?verbose=true&warn=true)
+[webpack-cli] Error: Compiling RuleSet failed: Query arguments 
+on 'loader' has been removed in favor of the 'options' property 
+(at ruleSet[1].rules[3].loader: elm-webpack?verbose=true&warn=true)
 {% endhighlight %}
 
 Apparently the loader options should be in a separate object:
 
-{% highlight markdown %}
+{% highlight javascript %}
     {
         test:    /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
@@ -85,13 +87,16 @@ Running npx webpack serve, it complained that the devserver was not installed, b
 
 {% highlight javascript %}
 <i> [webpack-dev-server] Project is running at:
-<i> [webpack-dev-server] Loopback: http://localhost:8080/, http://127.0.0.1:8080/
-<i> [webpack-dev-server] Content not from webpack is served from '/home/andre/git/repo/starting-with-elm/public' directory
+<i> [webpack-dev-server] 
+    Loopback: http://localhost:8080/, http://127.0.0.1:8080/
+<i> [webpack-dev-server] Content not from webpack is served from 
+    '/home/andre/git/repo/starting-with-elm/public' directory
 node:internal/errors:456
     ErrorCaptureStackTrace(err);
     ^
 
-Error: ENOSPC: System limit for number of file watchers reached, watch '/home/andre/git/repo/starting-with-elm'
+Error: ENOSPC: System limit for number of file watchers reached, 
+watch '/home/andre/git/repo/starting-with-elm'
 {% endhighlight %}
 
 When this was fixed by increasing the number of watchers on my machine with puttin this line in /etc/sysctl.conf:
@@ -109,11 +114,15 @@ sudo sysctl -p.
 By now the devserver started and opent a webpage with a friendly "hello world".
 While this is friendly and looks good, it is not the message I wanted to see.
 Besides this, it also said "Tip: Check your console". And indeed the console had interesting information
-{% highlight javascript %}
-andre@HP-ProBook-470-G5:~/git/repo/starting-with-elm$ npx webpack serve
+
+<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: xx-small">
+andre@HP-ProBook-470-G5:
+~/git/repo/starting-with-elm$ npx webpack serve
 <i> [webpack-dev-server] Project is running at:
-<i> [webpack-dev-server] Loopback: http://localhost:8080/, http://127.0.0.1:8080/
-<i> [webpack-dev-server] Content not from webpack is served from '/home/andre/git/repo/starting-with-elm/public' directory
+<i> [webpack-dev-server] 
+    Loopback: http://localhost:8080/, http://127.0.0.1:8080/
+<i> [webpack-dev-server] Content not from webpack is served from 
+    '/home/andre/git/repo/starting-with-elm/public' directory
 <i> [webpack-dev-middleware] wait until bundle finished: /
 asset bundle.js 121 KiB [emitted] (name: main)
 asset index.html 825 bytes [emitted]
@@ -267,7 +276,7 @@ Error: ENOENT: no such file or directory, open '/home/andre/git/repo/starting-wi
 Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
 
 webpack 5.59.1 compiled with 10 errors in 211 ms
-{% endhighlight %}
+</code></pre></figure>
 
 The most important one is
 Error: ENOENT: no such file or directory, open '/home/andre/git/repo/starting-with-elm/src/elm/elm.json'
