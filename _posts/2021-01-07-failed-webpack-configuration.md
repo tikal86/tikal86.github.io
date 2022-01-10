@@ -6,10 +6,15 @@ categories: [elm]
 tags: [webpack, elm]
 ---
 
-#### Webpack
-Then onto webpack, the guide was written with an older version of webpack in mind. The config schema is changed and so the proposed config does not work. So webpack init was run to create a new config file. The follwing answers were given to the questions asked by webpack init:
+# Webpack configuration for elm electron starting guide
+This post is a sidelane from the blog [starting with elm](https://tikal86.github.io/elm/starting-with-elm)
+That describes the setup for an elm application within electron with the help of a guide from github.
+This describes the failed attempt to configure webpack and a dev server for that project. 
 
-{% highlight bash %}
+#### Webpack
+The guide was written with an older version of webpack in mind. The config schema is changed and so the proposed config does not work. So webpack init was run to create a new config file. The follwing answers were given to the questions asked by webpack init:
+
+<figure><pre style="background-color: black;"><code style="background-color: black;color: #66d9ef;border: none;font-size: x-small">
 ? Which of the following JS solutions do you want to use? ES6
 ? Do you want to use webpack-dev-server? Yes
 ? Do you want to simplify the creation of HTML files for your bundle? Yes
@@ -29,12 +34,12 @@ Then onto webpack, the guide was written with an older version of webpack in min
    create index.html
    create webpack.config.js
    create .babelrc
-{% endhighlight %}
+</code></pre></figure>
 
 After that change the entry in the webpack.config.js for entry, because webpack uses './src/index.js' as default.
 And add the elm loader to the module/rules/ list. Luckily we can copy that paert from the guide
 
-{% highlight json %}
+{% highlight markdown %}
 {
     test:    /\.elm$/,
     exclude: [/elm-stuff/, /node_modules/],
@@ -43,7 +48,7 @@ And add the elm loader to the module/rules/ list. Luckily we can copy that paert
 {% endhighlight %}
 
 Now we need to add the plugins that webpack put in the config.
-{% highlight bash %}
+{% highlight javascript %}
 npm install html-webpack-plugin --save-dev
 npm install mini-css-extract-plugin --save-dev
 npm install workbox-webpack-plugin --save-dev
@@ -55,13 +60,13 @@ BTW if you npx webpack configtest it will show all the errors that there are.
 Now there are no validation errors anymore, we can start webpack.
 Unfortunately there is still an error when run:
 
-{% highlight bash %}
+{% highlight javascript %}
 [webpack-cli] Error: Compiling RuleSet failed: Query arguments on 'loader' has been removed in favor of the 'options' property (at ruleSet[1].rules[3].loader: elm-webpack?verbose=true&warn=true)
 {% endhighlight %}
 
 Apparently the loader options should be in a separate object:
 
-{% highlight json %}
+{% highlight markdown %}
     {
         test:    /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
@@ -78,7 +83,7 @@ After specifying the filename of the bundle in the output options, webpack creat
 #### Webpack devserver
 Running npx webpack serve, it complained that the devserver was not installed, but it suggested to install it. So that was easy. But then it complained about too many file watchers
 
-{% highlight bash %}
+{% highlight javascript %}
 <i> [webpack-dev-server] Project is running at:
 <i> [webpack-dev-server] Loopback: http://localhost:8080/, http://127.0.0.1:8080/
 <i> [webpack-dev-server] Content not from webpack is served from '/home/andre/git/repo/starting-with-elm/public' directory
@@ -91,20 +96,20 @@ Error: ENOSPC: System limit for number of file watchers reached, watch '/home/an
 
 When this was fixed by increasing the number of watchers on my machine with puttin this line in /etc/sysctl.conf:
 
-{% highlight bash %}
+{% highlight javascript %}
 fs.inotify.max_user_watches=524288
 {% endhighlight %}
 
 and the doing a
 
-{% highlight bash %}
+{% highlight javascript %}
 sudo sysctl -p.
 {% endhighlight %}
 
 By now the devserver started and opent a webpage with a friendly "hello world".
 While this is friendly and looks good, it is not the message I wanted to see.
 Besides this, it also said "Tip: Check your console". And indeed the console had interesting information
-{% highlight bash %}
+{% highlight javascript %}
 andre@HP-ProBook-470-G5:~/git/repo/starting-with-elm$ npx webpack serve
 <i> [webpack-dev-server] Project is running at:
 <i> [webpack-dev-server] Loopback: http://localhost:8080/, http://127.0.0.1:8080/
