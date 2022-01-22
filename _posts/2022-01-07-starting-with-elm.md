@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Starting functional programming with Elm"
+title:  "How difficult van it be?"
 date:   2022-01-07
 categories: [elm]
 tags: [functional, programming, elm]
@@ -10,7 +10,7 @@ tags: [functional, programming, elm]
 This is a blog series about functional programming with Elm.
 
 ### Why start programming with Elm?
-I am a software engineer for a long time and have been programming in an Object Oriented way my whole career, mostly in Java. I like discovering new things and for a time that was mostly Java related. But while there was a lot of development around Java(not much in the language itself), it felt like more of the same. A new library here and there but mostly on known concepts. When I learned to program for the frontend, a whole new world opened. It felt like Java in the early days. Lots of frameworks and libraries popping up, great. 
+I am a software engineer for a long time and have been programming in an Object Oriented way my whole career, mostly in Java. I like discovering new things and for a time that was mostly Java related. But while there was a lot of development around Java (not much in the language itself), it felt like more of the same. A new library here and there but mostly on known concepts. When I learned to program for the frontend, a whole new world opened. It felt like Java in the early days. Lots of frameworks and libraries popping up, great. 
 
 #### Functional programming
 Lots of these new frameworks and libraries were about functional programming. Even Java received functional programming features. They were easy to use, albeit in a different way. It peaked my interest, what is that, real functional programming? By the way it is not a new concept. it exists for a long time, but somehow it is popping up everywhere. So I wanted to do functional programming. But where and in what language? I could go for the backend (there are multiple candidates, like frege and eta), but I choose the frontend, because I needed a more stable framework/language
