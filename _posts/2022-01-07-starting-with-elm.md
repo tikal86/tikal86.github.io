@@ -9,6 +9,9 @@ tags: [functional, programming, elm]
 ## Programming with Elm
 This is a blog series about functional programming with Elm.
 
+### Introduction
+Setting up an development environment with elm and electron should not be to difficult, but was it?
+
 ### Why start programming with Elm?
 I am a software engineer for a long time and have been programming in an Object Oriented way my whole career, mostly in Java. I like discovering new things and for a time that was mostly Java related. But while there was a lot of development around Java (not much in the language itself), it felt like more of the same. A new library here and there but mostly on known concepts. When I learned to program for the frontend, a whole new world opened. It felt like Java in the early days. Lots of frameworks and libraries popping up, great. 
 
