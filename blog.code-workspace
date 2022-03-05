@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../starting-with-elm"
 		}
 	],
 	"settings": {}
